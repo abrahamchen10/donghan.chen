@@ -1,0 +1,125 @@
+function openOrSenior(data){
+	var result = [];
+  for (var i = 0; i< data.length; i++) {
+  	if(data[i][0] >=55 && data[i][0] > 7){
+  		result[i] = 'Senior';
+  	} else{
+  		result[i] = 'Open'
+  	}
+
+  }
+
+  return result;
+}
+
+
+function openOrSenior(data){
+	var result = [];
+	data.map(function(item){
+		if(item[0] >= 55 && item[1] >7){
+			result.push('Senior');
+		} else{
+			result.push('Open');
+		}
+	}
+		)
+	return result;
+	}
+
+function openOrSenior(data){
+		data.forEach(return data[0] >= 55 && data[1] > 7? 'Senior': 'Open')
+			
+}
+
+
+function openOrSenior(data){
+  return data.map(x => x[0] > 54 && x[1] > 7 ? 'Senior' : 'Open');
+}
+
+
+
+function openOrsenior(data){
+	return data.map(x[0] >= 55 && x[1] >7? 'Senior':'Open');
+}
+
+
+
+function maskify(cc) {
+  return cc.slice(0, -4).replace(/./g, '#') + cc.slice(-4);
+}
+
+// return masked string
+function maskify(cc) {
+  return cc.replace(/.(?=....)/g, '#');
+}
+
+function maskify(cc) {
+  return cc.replace(/.(?=.{4})/g, "#");
+}
+
+// return masked string
+function maskify(cc) {
+  return cc.replace(/(?=.{5})./g, '#')
+}
+
+
+// return masked string
+function maskify(cc) {
+  cc = cc.split("");
+  for(var i = 0; i < cc.length - 4; i++){
+    cc[i] = "#";
+}
+
+cc = cc.join("");
+return cc
+}
+
+
+function maskify(cc) {
+  return cc.split('').reduce(function(t, c, i) {
+      return i < cc.length - 4 ? t + '#' : t + c;
+  }, '');
+}
+
+
+// return masked string
+function maskify(cc) {
+  const len = cc.length;
+  return (len < 4) ? cc : cc.substr(0, len - 4).replace(/./g, "#") + cc.substr(len - 4, len);
+}
+
+
+
+function XO(str) {
+    var a = str.replace(/x/gi, ''),
+        b = str.replace(/o/gi, '');
+    return a.length === b.length;
+}
+
+function XO(str) {
+  return str.replace(/o/ig, '').length == str.replace(/x/ig, '').length
+}
+
+
+
+function XO(str) {
+    str = str.toLowerCase();
+    return (str.match(/o/g) || []).length === (str.match(/x/g) || []).length;
+}
+
+
+
+function XO(str) {
+   var x = (str.match(/x/gi) || []).length;
+   var o = (str.match(/o/gi) || []).length;
+   
+   if( x === o ) { return true; }
+   else { return false; }
+}
+
+
+function XO(str) {
+    return str.toLowerCase().replace(/[^x]/g, "").length === str.toLowerCase().replace(/[^o]/g, "").length
+}
+
+XO = s => (s += 'xo').match(/x/gi).length === s.match(/o/gi).length;
