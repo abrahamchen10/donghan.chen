@@ -123,3 +123,11 @@ function XO(str) {
 }
 
 XO = s => (s += 'xo').match(/x/gi).length === s.match(/o/gi).length;
+
+
+
+
+
+
+
+
